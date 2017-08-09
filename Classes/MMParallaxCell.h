@@ -14,6 +14,26 @@
 
 @property (nonatomic, assign) CGFloat parallaxRatio; //ratio of cell height, should between [1.0f, 2.0f], default is 1.5f;
 
+
+/**
+ 
+ Use this method for dealloc visibles cells
+ On your ViewController on dealloc call this method.
+ 
+ e.g.
+ 
+ 
+ - (void)dealloc {
+    for (MMParallaxCell *cell in self.tableView.visibleCells) {
+        [cell safeRemoveObserver];
+    }
+ }
+ 
+ 
+ It will be fix the retain cycle, deallocing all cells in memory
+ 
+ 
+ */
 - (void)safeRemoveObserver;
 
 @end

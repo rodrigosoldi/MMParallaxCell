@@ -14,4 +14,6 @@
 
 @property (nonatomic, assign) CGFloat parallaxRatio; //ratio of cell height, should between [1.0f, 2.0f], default is 1.5f;
 
+- (void)safeRemoveObserver;
+
 @end
